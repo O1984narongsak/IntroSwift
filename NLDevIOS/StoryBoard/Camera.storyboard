@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CameraVC-->
+        <scene sceneID="nSZ-XW-zcJ">
+            <objects>
+                <viewController storyboardIdentifier="CameraID" id="MUb-Hy-KjC" customClass="CameraVC" customModule="NLDevIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ug-nJ-MW2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayv-2O-Uyf">
+                                <rect key="frame" x="83" y="197" width="209" height="209"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="YUJ-Vj-lT9"/>
+                                    <constraint firstAttribute="height" constant="209" id="udX-Ju-SEx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVN-dU-xzq">
+                                <rect key="frame" x="155.5" y="482" width="64" height="39"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35522587435233166" green="0.35522587435233166" blue="0.35522587435233166" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hVN-dU-xzq" firstAttribute="top" secondItem="ayv-2O-Uyf" secondAttribute="bottom" constant="76" id="INK-3h-a8x"/>
+                            <constraint firstItem="ayv-2O-Uyf" firstAttribute="centerX" secondItem="3ug-nJ-MW2" secondAttribute="centerX" id="WTo-UO-VTF"/>
+                            <constraint firstItem="ayv-2O-Uyf" firstAttribute="centerY" secondItem="3ug-nJ-MW2" secondAttribute="centerY" id="laA-VU-c0t"/>
+                            <constraint firstItem="hVN-dU-xzq" firstAttribute="centerX" secondItem="ayv-2O-Uyf" secondAttribute="centerX" id="twG-0j-Fp6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Gz-2h-1rv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0mo-Zb-Cmq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="wTh-ry-tVk">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="takePhoto:" destination="MUb-Hy-KjC" id="nL4-Oc-TKv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="oCamera" destination="wTh-ry-tVk" id="EPp-Xr-O2g"/>
+                        <outlet property="oIMGView" destination="ayv-2O-Uyf" id="w0t-f4-Scb"/>
+                        <outlet property="oReCapBtn" destination="hVN-dU-xzq" id="RSo-tG-Slq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0nm-16-h39" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="167.76611694152925"/>
+        </scene>
+    </scenes>
+</document>
