@@ -30,6 +30,12 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sck-NS-Ikd">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="158"/>
                                                     </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdA-tD-ZHP">
+                                                        <rect key="frame" x="8" y="126" width="33" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -37,7 +43,9 @@
                                                     <constraint firstAttribute="bottom" secondItem="Sck-NS-Ikd" secondAttribute="bottom" id="JRB-no-j0f"/>
                                                     <constraint firstItem="Sck-NS-Ikd" firstAttribute="leading" secondItem="7Wg-f4-LXI" secondAttribute="leading" id="XES-IT-KsI"/>
                                                     <constraint firstItem="Sck-NS-Ikd" firstAttribute="top" secondItem="7Wg-f4-LXI" secondAttribute="top" id="gvz-kA-qO5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OdA-tD-ZHP" secondAttribute="bottom" constant="8" id="lkG-3o-OYB"/>
                                                     <constraint firstAttribute="trailing" secondItem="Sck-NS-Ikd" secondAttribute="trailing" id="n0k-23-KLM"/>
+                                                    <constraint firstItem="OdA-tD-ZHP" firstAttribute="leading" secondItem="7Wg-f4-LXI" secondAttribute="leading" constant="8" id="rv8-qQ-NnC"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WM7-hM-fji">
@@ -162,13 +170,15 @@
                         <outlet property="collectionView" destination="DoB-7d-lAI" id="Qeg-7c-q6T"/>
                         <outlet property="headUV" destination="7Wg-f4-LXI" id="1Ws-1d-Cxg"/>
                         <outlet property="scollView_H" destination="1d5-9z-MbU" id="AhJ-8u-XhB"/>
+                        <outlet property="scrollView" destination="uUH-Dd-vQK" id="vll-Vk-aJR"/>
                         <outlet property="tableUV" destination="WM7-hM-fji" id="nVE-Vi-2xG"/>
                         <outlet property="tableView" destination="xIx-Dn-z2Y" id="Hpc-Lc-zT2"/>
+                        <outlet property="testlbl" destination="OdA-tD-ZHP" id="GCb-1K-ZDp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLg-Xl-z8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="-25.637181409295355"/>
+            <point key="canvasLocation" x="449" y="-111"/>
         </scene>
     </scenes>
 </document>

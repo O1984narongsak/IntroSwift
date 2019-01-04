@@ -10,6 +10,7 @@ import UIKit
 
 class BannerVC: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var BanIMG: UIImageView!
@@ -17,6 +18,7 @@ class BannerVC: UIViewController {
     @IBOutlet weak var colUV: UIView!
     @IBOutlet weak var headUV: UIView!
     
+    @IBOutlet weak var testlbl: UILabel!
     @IBOutlet weak var scollView_H : NSLayoutConstraint!
     //    var count = 0
     @IBOutlet weak var tableView: UITableView!
@@ -69,7 +71,7 @@ class BannerVC: UIViewController {
         collectionView.dataSource = self
         tableView.delegate = self
         tableView.dataSource = self
-
+        testlbl.isHidden = false
        
         //        scollView_H.constant = tableUV.frame.height + colUV.frame.height + headUV.frame.height
   
@@ -142,6 +144,7 @@ extension BannerVC : UICollectionViewDataSource,UICollectionViewDelegate {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderColor = UIColor.gray.cgColor
         cell?.layer.borderWidth = 9
+        testlbl.isHidden = true
         presentAlertWithTitle(title: "Yeah", message: "\(indexPath.item + 1)") {
 
         }
@@ -211,7 +214,7 @@ extension BannerVC: UITableViewDelegate, UITableViewDataSource, ExpandableHeader
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-    
+        scrollView.scrollToBottom(animated: true)
         
     }
     
@@ -221,6 +224,14 @@ extension BannerVC: UITableViewDelegate, UITableViewDataSource, ExpandableHeader
     
     
     
+}
+
+extension UIScrollView {
+    func scrollToBottom(animated: Bool) {
+        if self.contentSize.height < self.bounds.size.height { return }
+        let bottomOffset = CGPoint(x: 0, y: self.contentSize.height - self.bounds.size.height)
+        self.setContentOffset(bottomOffset, animated: animated)
+    }
 }
 
 

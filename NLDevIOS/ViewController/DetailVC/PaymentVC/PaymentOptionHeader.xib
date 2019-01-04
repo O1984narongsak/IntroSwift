@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="PaymentOptionHeader" customModule="NLDevIOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="355" height="71.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" tag="99" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cBp-EE-u4H">
+                        <rect key="frame" x="34" y="12" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="TRS-Hr-8BY"/>
+                            <constraint firstAttribute="height" constant="48" id="zzc-WQ-cjK"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydz-dA-TrE">
+                        <rect key="frame" x="8" y="31" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="EsX-v0-f6V"/>
+                            <constraint firstAttribute="width" constant="10" id="lRc-YG-Y3e"/>
+                        </constraints>
+                    </button>
+                    <button opaque="NO" tag="555" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gr3-Y0-g5O">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="71.5"/>
+                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8af-0h-98m">
+                        <rect key="frame" x="98" y="8" width="249" height="55.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="idA-5t-2y5">
+                                <rect key="frame" x="0.0" y="0.0" width="225" height="55.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="19" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xI1-sW-ViK">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="18" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c34-ng-2Z0">
+                                        <rect key="frame" x="0.0" y="35" width="225" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" tag="999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_seemore_down" translatesAutoresizingMaskIntoConstraints="NO" id="ZIG-4k-mFQ">
+                                <rect key="frame" x="233" y="0.0" width="16" height="55.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="o79-c3-mjT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Gr3-Y0-g5O" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="7H3-3m-nj8"/>
+                    <constraint firstAttribute="bottom" secondItem="8af-0h-98m" secondAttribute="bottom" constant="8" id="8Ks-Y8-LbU"/>
+                    <constraint firstItem="8af-0h-98m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8zi-8y-qWs"/>
+                    <constraint firstItem="Gr3-Y0-g5O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EgU-oq-wPV"/>
+                    <constraint firstItem="8af-0h-98m" firstAttribute="leading" secondItem="cBp-EE-u4H" secondAttribute="trailing" constant="16" id="Qxp-y2-Thu"/>
+                    <constraint firstItem="cBp-EE-u4H" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RLa-K6-Wi7"/>
+                    <constraint firstItem="Gr3-Y0-g5O" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="UAV-Xa-Z5D"/>
+                    <constraint firstItem="ydz-dA-TrE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="WMV-PX-PkH"/>
+                    <constraint firstItem="ydz-dA-TrE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aE5-h5-Nvj"/>
+                    <constraint firstAttribute="trailing" secondItem="8af-0h-98m" secondAttribute="trailing" constant="8" id="axO-B1-FJY"/>
+                    <constraint firstItem="Gr3-Y0-g5O" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="cTu-va-wH4"/>
+                    <constraint firstItem="cBp-EE-u4H" firstAttribute="leading" secondItem="ydz-dA-TrE" secondAttribute="trailing" constant="16" id="xnT-jz-dSM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="8.8000000000000007" y="-88.15592203898052"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_seemore_down" width="24" height="12"/>
+    </resources>
+</document>

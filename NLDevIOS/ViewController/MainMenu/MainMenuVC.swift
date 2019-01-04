@@ -9,13 +9,13 @@
 import UIKit
 
 class MainMenuVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var menuItem =  [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         addMenu()
         setupTableView()
         setupView()
@@ -32,6 +32,13 @@ class MainMenuVC: UIViewController {
         menuItem.append("Collection")
         menuItem.append("WebView")
         menuItem.append("Banner")
+        menuItem.append("MapKit")
+        menuItem.append("iBeacon")
+        menuItem.append("Estimote")
+        menuItem.append("PView")
+        menuItem.append("ScreenRec")
+        menuItem.append("Detail")
+        menuItem.append("BasicCollectionInTB")
     }
     
     func setupTableView() {
@@ -40,7 +47,7 @@ class MainMenuVC: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
     }
-
+    
 }
 
 extension MainMenuVC: UITableViewDelegate, UITableViewDataSource {
@@ -81,8 +88,45 @@ extension MainMenuVC: UITableViewDelegate, UITableViewDataSource {
             let vc = storyboard.instantiateViewController(withIdentifier: "BannerID") as! BannerVC
             navigationController?.pushViewController(vc,animated: true)
             break
+        case 5:
+            let storyboard = UIStoryboard(name: "Theme", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ThemeID") as! ThemeVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+        case 6:
+            let storyboard = UIStoryboard(name: "Beacon", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "BeaconID") as! BeaconVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+        case 7:
+            let storyboard = UIStoryboard(name: "Estimote", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "EstimoteID") as! EstimoteVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+        case 8:
+            let storyboard = UIStoryboard(name: "PView", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "PViewID") as! PViewVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+        case 9:
+            let storyboard = UIStoryboard(name: "ScreenRec", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ScreenRecID") as! ScreenRecVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+        case 10:
+            let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DetailID") as! DetailVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+        case 11:
+            let storyboard = UIStoryboard(name: "BasicCollectionInTB", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "BasicCollectionInTBID") as! BasicCollectionInTBVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+            
         default:
             break
         }
     }
+    
 }
