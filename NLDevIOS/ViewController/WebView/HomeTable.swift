@@ -46,8 +46,8 @@ extension HomeTable: UITableViewDelegate,UITableViewDataSource {
             
         }else if row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SubProductCell") as! SubProductCell
-//            cell.lb_SubType.text = "Test:"
-//            cell.lb_SubDesc.text = "Make it Real"
+            cell.lb_SubType.text = "Test:"
+            cell.lb_SubDesc.text = "Make it Real"
             
             return cell
         } else {

@@ -26,6 +26,10 @@ extension SubProductCollectionView : UICollectionViewDelegate , UICollectionView
         return 10
     }
     
+//    func collectionView(_ collectionView: UICollectionView, transitionLayoutForOldLayout fromLayout: UICollectionViewLayout, newLayout toLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout {
+//        return CGSize(width: , height: <#T##CGFloat#>)
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubProductCollectionViewCell", for: indexPath) as! SubProductCollectionViewCell
         cell.lb_SubColCell.text = "Hey"

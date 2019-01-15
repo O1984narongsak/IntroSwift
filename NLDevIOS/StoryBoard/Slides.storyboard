@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SlidesVC-->
+        <scene sceneID="arr-WQ-14W">
+            <objects>
+                <viewController storyboardIdentifier="SlidesID" id="DL5-yQ-aSI" customClass="SlidesVC" customModule="NLDevIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x0B-IV-Rog">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhH-py-x3i">
+                                <rect key="frame" x="172.5" y="120" width="30.5" height="31.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ume-jH-SjQ">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.75489619006849318" blue="0.61841823630136983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ftD-Zt-qda"/>
+                                </constraints>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressStopBtn:" destination="DL5-yQ-aSI" eventType="touchUpInside" id="q89-3J-IHf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLR-et-Ms8">
+                                <rect key="frame" x="0.0" y="587" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.24703017979452055" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hxi-G7-7A3"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressStartBtn:" destination="DL5-yQ-aSI" eventType="touchUpInside" id="Nkx-Ao-JBM"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="55" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="hwY-oe-g8L">
+                                <rect key="frame" x="-2" y="318.5" width="379" height="31"/>
+                                <connections>
+                                    <action selector="pressSliders:" destination="DL5-yQ-aSI" eventType="valueChanged" id="UKW-lY-G5t"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ume-jH-SjQ" firstAttribute="top" secondItem="hLR-et-Ms8" secondAttribute="bottom" id="2SF-TV-Izr"/>
+                            <constraint firstItem="hwY-oe-g8L" firstAttribute="centerX" secondItem="x0B-IV-Rog" secondAttribute="centerX" id="54E-Ag-3xA"/>
+                            <constraint firstItem="hwY-oe-g8L" firstAttribute="leading" secondItem="NR4-za-pmg" secondAttribute="leading" id="5dL-Ld-heQ"/>
+                            <constraint firstItem="NhH-py-x3i" firstAttribute="top" secondItem="NR4-za-pmg" secondAttribute="top" constant="100" id="63o-Li-J5Y"/>
+                            <constraint firstItem="ume-jH-SjQ" firstAttribute="leading" secondItem="NR4-za-pmg" secondAttribute="leading" id="ItM-xw-Nvl"/>
+                            <constraint firstItem="NhH-py-x3i" firstAttribute="centerX" secondItem="x0B-IV-Rog" secondAttribute="centerX" id="Sya-uO-0Kn"/>
+                            <constraint firstItem="NR4-za-pmg" firstAttribute="trailing" secondItem="ume-jH-SjQ" secondAttribute="trailing" id="VQx-ra-Gji"/>
+                            <constraint firstItem="NR4-za-pmg" firstAttribute="bottom" secondItem="ume-jH-SjQ" secondAttribute="bottom" id="o4J-gE-n03"/>
+                            <constraint firstItem="hLR-et-Ms8" firstAttribute="leading" secondItem="NR4-za-pmg" secondAttribute="leading" id="px7-XC-csQ"/>
+                            <constraint firstItem="hwY-oe-g8L" firstAttribute="centerY" secondItem="x0B-IV-Rog" secondAttribute="centerY" id="qNr-eZ-bUb"/>
+                            <constraint firstItem="NR4-za-pmg" firstAttribute="trailing" secondItem="hwY-oe-g8L" secondAttribute="trailing" id="vfl-LF-wsv"/>
+                            <constraint firstItem="hLR-et-Ms8" firstAttribute="trailing" secondItem="NR4-za-pmg" secondAttribute="trailing" id="waV-Pr-sUU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NR4-za-pmg"/>
+                    </view>
+                    <connections>
+                        <outlet property="lb_time" destination="NhH-py-x3i" id="ogT-iW-Ncs"/>
+                        <outlet property="sl_slide" destination="hwY-oe-g8L" id="bNs-6X-Twq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CbO-UO-RPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="16"/>
+        </scene>
+    </scenes>
+</document>

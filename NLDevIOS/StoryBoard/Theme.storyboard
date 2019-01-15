@@ -18,69 +18,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oMD-xM-mlD">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oMD-xM-mlD">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vxl-b9-vK9" id="GoD-XO-4rb"/>
                                 </connections>
                             </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tl_RS" translatesAutoresizingMaskIntoConstraints="NO" id="jay-f6-uw6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tl_RS" translatesAutoresizingMaskIntoConstraints="NO" id="jay-f6-uw6">
                                 <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Iet-a6-kiX"/>
-                                    <constraint firstAttribute="width" constant="40" id="o8E-ye-9ki"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E7-HL-GkJ">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E7-HL-GkJ">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="TcI-Pg-etv"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMP-Ih-3W4">
-                                <rect key="frame" x="255" y="40" width="80" height="60"/>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMP-Ih-3W4">
+                                <rect key="frame" x="299" y="303.5" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="a6P-Ea-zoq"/>
-                                    <constraint firstAttribute="height" constant="60" id="vgm-Gq-3in"/>
+                                    <constraint firstAttribute="height" constant="60" id="hF1-fr-vot"/>
+                                    <constraint firstAttribute="width" constant="60" id="tO9-Ip-xkO"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="TL_XS"/>
+                                <state key="normal" title="Nav.">
+                                    <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="goButtonTapped:" destination="vxl-b9-vK9" eventType="touchUpInside" id="51W-Od-aXf"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qqZ-sK-fBq">
+                                <rect key="frame" x="214" y="40" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segControll:" destination="Dcz-3w-ASc" eventType="valueChanged" id="gVF-Bt-oOU"/>
+                                    <action selector="segMapTapped:" destination="vxl-b9-vK9" eventType="valueChanged" id="ThS-lt-GrQ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aMP-Ih-3W4" secondAttribute="trailing" constant="40" id="4Rk-KN-yzD"/>
-                            <constraint firstAttribute="bottom" secondItem="oMD-xM-mlD" secondAttribute="bottom" id="Mnz-r8-XW4"/>
-                            <constraint firstItem="RU0-SN-ATw" firstAttribute="trailing" secondItem="9E7-HL-GkJ" secondAttribute="trailing" id="Pqx-k0-82m"/>
-                            <constraint firstItem="aMP-Ih-3W4" firstAttribute="top" secondItem="cvN-Aq-6Bp" secondAttribute="top" constant="40" id="RkR-jd-xp3"/>
-                            <constraint firstItem="RU0-SN-ATw" firstAttribute="bottom" secondItem="9E7-HL-GkJ" secondAttribute="bottom" id="Zkw-B0-taI"/>
-                            <constraint firstItem="9E7-HL-GkJ" firstAttribute="leading" secondItem="RU0-SN-ATw" secondAttribute="leading" id="bBH-Az-SDO"/>
-                            <constraint firstItem="oMD-xM-mlD" firstAttribute="leading" secondItem="RU0-SN-ATw" secondAttribute="leading" id="fLO-YY-j9K"/>
-                            <constraint firstItem="jay-f6-uw6" firstAttribute="centerY" secondItem="cvN-Aq-6Bp" secondAttribute="centerY" id="oZr-jH-5uH"/>
-                            <constraint firstItem="jay-f6-uw6" firstAttribute="centerX" secondItem="cvN-Aq-6Bp" secondAttribute="centerX" id="pE8-Ne-7H7"/>
-                            <constraint firstAttribute="trailing" secondItem="oMD-xM-mlD" secondAttribute="trailing" id="q93-cQ-aQc"/>
-                            <constraint firstItem="oMD-xM-mlD" firstAttribute="top" secondItem="RU0-SN-ATw" secondAttribute="top" id="zbi-H7-tzm"/>
+                            <constraint firstItem="RU0-SN-ATw" firstAttribute="trailing" secondItem="aMP-Ih-3W4" secondAttribute="trailing" constant="16" id="1Nv-gc-dmb"/>
+                            <constraint firstItem="RU0-SN-ATw" firstAttribute="trailing" secondItem="qqZ-sK-fBq" secondAttribute="trailing" constant="40" id="Jap-ye-tZV"/>
+                            <constraint firstItem="qqZ-sK-fBq" firstAttribute="top" secondItem="RU0-SN-ATw" secondAttribute="top" constant="20" id="bOV-wN-bEg"/>
+                            <constraint firstItem="aMP-Ih-3W4" firstAttribute="centerY" secondItem="cvN-Aq-6Bp" secondAttribute="centerY" id="yD7-9E-sXd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RU0-SN-ATw"/>
                     </view>
                     <connections>
                         <outlet property="addresslbl" destination="9E7-HL-GkJ" id="woN-XA-SI3"/>
                         <outlet property="mapView" destination="oMD-xM-mlD" id="rxk-3M-mjf"/>
+                        <outlet property="secMapControl" destination="qqZ-sK-fBq" id="0dx-zj-IRg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pf7-fD-m29" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Dcz-3w-ASc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="138" y="87"/>
         </scene>
     </scenes>
     <resources>
-        <image name="TL_XS" width="706" height="532"/>
         <image name="Tl_RS" width="956.25" height="567"/>
     </resources>
 </document>

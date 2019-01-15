@@ -19,6 +19,7 @@ class ScreenRecVC: UIViewController {
 
     @IBOutlet weak var audioSwitch: UISwitch!
     
+ 
     
     @IBOutlet weak var ScreenRecBtn: UIButton!
     

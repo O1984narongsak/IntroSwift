@@ -22,6 +22,13 @@
 		300BA37521DE156B00E8F6EB /* SkuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300BA37421DE156B00E8F6EB /* SkuCollectionView.swift */; };
 		302668C121C8DA3900673F62 /* EstimoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302668C021C8DA3900673F62 /* EstimoteVC.swift */; };
 		302668C321C8DA8B00673F62 /* Estimote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302668C221C8DA8A00673F62 /* Estimote.storyboard */; };
+		302AFF3E21EC288A0005B85E /* Slides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302AFF3D21EC288A0005B85E /* Slides.storyboard */; };
+		302AFF4121EC28F70005B85E /* SlidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4021EC28F70005B85E /* SlidesVC.swift */; };
+		302AFF4321EC6C6D0005B85E /* CGdraw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302AFF4221EC6C6D0005B85E /* CGdraw.storyboard */; };
+		302AFF4621EC6CCE0005B85E /* CGDrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4521EC6CCE0005B85E /* CGDrawVC.swift */; };
+		302AFF4821EC70080005B85E /* PushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4721EC70080005B85E /* PushButton.swift */; };
+		302AFF4A21EC7DEE0005B85E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4921EC7DEE0005B85E /* CounterView.swift */; };
+		302AFF4C21EC94FB0005B85E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4B21EC94FB0005B85E /* GraphView.swift */; };
 		3030C54321D3748C0054E320 /* CouponCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030C54221D3748C0054E320 /* CouponCollectionCell.swift */; };
 		3030C54521D37D720054E320 /* CouponM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030C54421D37D720054E320 /* CouponM.swift */; };
 		3030C54721D468A70054E320 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030C54621D468A70054E320 /* CommentTableViewCell.swift */; };
@@ -102,6 +109,13 @@
 		300BA37421DE156B00E8F6EB /* SkuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkuCollectionView.swift; sourceTree = "<group>"; };
 		302668C021C8DA3900673F62 /* EstimoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimoteVC.swift; sourceTree = "<group>"; };
 		302668C221C8DA8A00673F62 /* Estimote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Estimote.storyboard; sourceTree = "<group>"; };
+		302AFF3D21EC288A0005B85E /* Slides.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Slides.storyboard; sourceTree = "<group>"; };
+		302AFF4021EC28F70005B85E /* SlidesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidesVC.swift; sourceTree = "<group>"; };
+		302AFF4221EC6C6D0005B85E /* CGdraw.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CGdraw.storyboard; sourceTree = "<group>"; };
+		302AFF4521EC6CCE0005B85E /* CGDrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGDrawVC.swift; sourceTree = "<group>"; };
+		302AFF4721EC70080005B85E /* PushButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushButton.swift; sourceTree = "<group>"; };
+		302AFF4921EC7DEE0005B85E /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		302AFF4B21EC94FB0005B85E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		3030C54221D3748C0054E320 /* CouponCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCollectionCell.swift; sourceTree = "<group>"; };
 		3030C54421D37D720054E320 /* CouponM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponM.swift; sourceTree = "<group>"; };
 		3030C54621D468A70054E320 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +222,26 @@
 				302668C021C8DA3900673F62 /* EstimoteVC.swift */,
 			);
 			path = Estimote;
+			sourceTree = "<group>";
+		};
+		302AFF3F21EC28A40005B85E /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				302AFF4021EC28F70005B85E /* SlidesVC.swift */,
+			);
+			name = Slides;
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		302AFF4421EC6CA40005B85E /* CGDraw */ = {
+			isa = PBXGroup;
+			children = (
+				302AFF4521EC6CCE0005B85E /* CGDrawVC.swift */,
+				302AFF4721EC70080005B85E /* PushButton.swift */,
+				302AFF4921EC7DEE0005B85E /* CounterView.swift */,
+				302AFF4B21EC94FB0005B85E /* GraphView.swift */,
+			);
+			path = CGDraw;
 			sourceTree = "<group>";
 		};
 		3030C54821D46CB30054E320 /* ShippingVC */ = {
@@ -425,6 +459,8 @@
 				302668C221C8DA8A00673F62 /* Estimote.storyboard */,
 				30DB2CEC21CCBE1500AC1850 /* PView.storyboard */,
 				304DA2A921D1DD7D00D4F091 /* ScreenRec.storyboard */,
+				302AFF3D21EC288A0005B85E /* Slides.storyboard */,
+				302AFF4221EC6C6D0005B85E /* CGdraw.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -442,7 +478,9 @@
 				304DA2A521D1DCB600D4F091 /* ScreenRec */,
 				3081CCE621D314DD00BFC224 /* DetailVC */,
 				3009860621C1F8E4002F2341 /* WebView */,
+				302AFF4421EC6CA40005B85E /* CGDraw */,
 				30FF66FD21DEF50200D9A663 /* BasicCollectionInTB */,
+				302AFF3F21EC28A40005B85E /* Slides */,
 				8789D6B621BA4BF100A01DA2 /* MainMenu */,
 			);
 			path = ViewController;
@@ -549,6 +587,7 @@
 				3009860A21C1F97E002F2341 /* WebView.storyboard in Resources */,
 				306B1BCD21BA678200EF10AD /* TextField.storyboard in Resources */,
 				304DA2AA21D1DD7D00D4F091 /* ScreenRec.storyboard in Resources */,
+				302AFF3E21EC288A0005B85E /* Slides.storyboard in Resources */,
 				30379BA921C0C97C00DA5941 /* Collection.storyboard in Resources */,
 				30DB2CED21CCBE1500AC1850 /* PView.storyboard in Resources */,
 				8789D6A421BA4B7700A01DA2 /* Main.storyboard in Resources */,
@@ -557,6 +596,7 @@
 				8789D6BD21BA4C7200A01DA2 /* MainMenuCell.xib in Resources */,
 				30C85D4721C89DF2001B090B /* Beacon.storyboard in Resources */,
 				30DB2CF821CCCA0D00AC1850 /* PViewHeader.xib in Resources */,
+				302AFF4321EC6C6D0005B85E /* CGdraw.storyboard in Resources */,
 				8789D6C021BA4FAC00A01DA2 /* Camera.storyboard in Resources */,
 				3009861421C23FD2002F2341 /* sharePdf.pdf in Resources */,
 				30C85D4221C76EE4001B090B /* Theme.storyboard in Resources */,
@@ -595,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302AFF4621EC6CCE0005B85E /* CGDrawVC.swift in Sources */,
 				306B1BCA21BA5EEB00EF10AD /* ExtensionUIView.swift in Sources */,
 				30DB2CF421CCC6F300AC1850 /* ImageConstants.swift in Sources */,
 				300BA36921DC668600E8F6EB /* PaymentModel.swift in Sources */,
@@ -609,6 +650,7 @@
 				30AF261121C10A6300D5CEA2 /* ExtensionAlert.swift in Sources */,
 				30FF670721DEFB6E00D9A663 /* FeatureCell.swift in Sources */,
 				306B1BD121BA6C9C00EF10AD /* ExtensionUITextField.swift in Sources */,
+				302AFF4121EC28F70005B85E /* SlidesVC.swift in Sources */,
 				8789D6A721BA4B7700A01DA2 /* NLDevIOS.xcdatamodeld in Sources */,
 				3030C54521D37D720054E320 /* CouponM.swift in Sources */,
 				30C85D4C21C8D461001B090B /* ExtensionUIImage.swift in Sources */,
@@ -616,6 +658,7 @@
 				3030C54A21D46CFA0054E320 /* ShippingVC.swift in Sources */,
 				306B1BCF21BA67CE00EF10AD /* TextFieldVC.swift in Sources */,
 				300BA37321DE10C400E8F6EB /* SkuCollectionCell.swift in Sources */,
+				302AFF4821EC70080005B85E /* PushButton.swift in Sources */,
 				30DB2CF121CCC5FB00AC1850 /* PViewCell.swift in Sources */,
 				300BA36521DC65D900E8F6EB /* PaymentVC.swift in Sources */,
 				8789D69F21BA4B7700A01DA2 /* AppDelegate.swift in Sources */,
@@ -627,6 +670,7 @@
 				30FF670921DEFBE900D9A663 /* ProductCell.swift in Sources */,
 				3049D01421C3638F0014E705 /* Section.swift in Sources */,
 				8789D6C221BA4FC000A01DA2 /* CameraVC.swift in Sources */,
+				302AFF4C21EC94FB0005B85E /* GraphView.swift in Sources */,
 				30FF670B21DEFF9400D9A663 /* CategoryCell.swift in Sources */,
 				304DA2A721D1DCE900D4F091 /* ScreenRecVC.swift in Sources */,
 				30C85D4521C76F2B001B090B /* ThemeVC.swift in Sources */,
@@ -643,6 +687,7 @@
 				3009860821C1F944002F2341 /* WebViewVC.swift in Sources */,
 				300BA37521DE156B00E8F6EB /* SkuCollectionView.swift in Sources */,
 				3009860C21C1FE85002F2341 /* SubWebViewVC.swift in Sources */,
+				302AFF4A21EC7DEE0005B85E /* CounterView.swift in Sources */,
 				3030C55121D4A2310054E320 /* ShippingModel.swift in Sources */,
 				8789D6B821BA4C0600A01DA2 /* MainMenuVC.swift in Sources */,
 				30FF670321DEFAE900D9A663 /* HomeTable.swift in Sources */,

@@ -38,6 +38,8 @@ class MainMenuVC: UIViewController {
         menuItem.append("PView")
         menuItem.append("ScreenRec")
         menuItem.append("Detail")
+        menuItem.append("Slides")
+        menuItem.append("CGDraw")
         menuItem.append("BasicCollectionInTB")
     }
     
@@ -119,8 +121,19 @@ extension MainMenuVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc,animated: true)
             break
         case 11:
+            let storyboard = UIStoryboard(name: "Slides", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "SlidesID") as! SlidesVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+            
+        case 13:
             let storyboard = UIStoryboard(name: "BasicCollectionInTB", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "BasicCollectionInTBID") as! BasicCollectionInTBVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+        case 12:
+            let storyboard = UIStoryboard(name: "CGdraw", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "CGDrawID") as! CGDrawVC
             navigationController?.pushViewController(vc,animated: true)
             break
             

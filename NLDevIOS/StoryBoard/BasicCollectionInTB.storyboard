@@ -213,7 +213,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="vno-wq-Lc3"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jgq-s9-fui">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jgq-s9-fui">
                                                         <size key="itemSize" width="69" height="70"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -221,7 +221,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SubProductCollectionViewCell" id="cMG-4m-ckV" customClass="SubProductCollectionViewCell" customModule="NLDevIOS" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="10" width="69" height="70"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="69" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="69" height="70"/>

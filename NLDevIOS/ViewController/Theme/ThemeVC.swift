@@ -9,15 +9,17 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Contacts
 
 class ThemeVC: UIViewController {
     
     @IBOutlet weak var addresslbl: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var secMapControl: UISegmentedControl!
     
     let locationManager = CLLocationManager()
-    let regionInMaters:Double  = 50_000
+    let regionInMaters:Double  = 500
     var userPinView: MKAnnotationView!
     var previousLocation: CLLocation?
     var directionsArray: [MKDirections] = []
@@ -38,7 +40,7 @@ class ThemeVC: UIViewController {
         self.title = "MapView"
         mapView.showsTraffic = true
         mapView.showsScale = true
-        mapView.mapType = .hybrid
+        mapView.mapType = .mutedStandard
     }
     
     func setupLocationManager(){
@@ -131,11 +133,26 @@ class ThemeVC: UIViewController {
         
         let reuseIdentifier = "my_pin"
         
+//        let identifier = "marker"
+//        var view: MKMarkerAnnotationView
+//
+//        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
+//            dequeuedView.annotation = annotation
+//            view = dequeuedView
+//        } else {
+//            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+//            view.canShowCallout = true
+//            view.calloutOffset = CGPoint(x: -5, y: 5)
+//            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//        }
+//
+//        return view
+//
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
         if annotation is MKUserLocation {
             let pin = mapView.view(for: annotation) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
             
-            let iMG:UIImage = UIImage(named: "TL_SS")!
+            let iMG:UIImage = UIImage(named: "nearby_icon_selected")!
             
             pin.image = iMG
             userPinView = pin
@@ -147,13 +164,15 @@ class ThemeVC: UIViewController {
             
         } else {
             annotationView?.annotation = annotation
+            
+//            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        
         }
         
         annotationView?.isDraggable = false
-        annotationView?.canShowCallout = false
+        annotationView?.canShowCallout = true
         annotationView?.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         annotationView?.image = UIImage(named: "icons8-marker-25")
-        
         return annotationView
     }
     
@@ -164,6 +183,7 @@ class ThemeVC: UIViewController {
             return
         }
         
+        print(location)
         let request = createDirectionRequest(from: location)
         let directions = MKDirections(request: request)
         resetMapView(withNew: directions)
@@ -175,6 +195,12 @@ class ThemeVC: UIViewController {
             for route in response.routes {
                 self.mapView.addOverlay(route.polyline)
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                let eta = route.expectedTravelTime
+                let distance = route.distance
+                let transType = route.transportType
+                print(eta)
+                print(distance)
+                print(transType)
             }
         }
     }
@@ -184,12 +210,17 @@ class ThemeVC: UIViewController {
         let startingLocation              = MKPlacemark(coordinate: coordinate)
         let destination                   = MKPlacemark(coordinate: destnationCoordinate)
         
+        let startPin = customPin(pinTitle: "You here!", pinSubtitle: "", location: coordinate)
+        let destinationPin = customPin(pinTitle: "Destination", pinSubtitle: "", location: destnationCoordinate)
+        self.mapView.addAnnotation(startPin)
+        self.mapView.addAnnotation(destinationPin)
+        
         let request                       = MKDirections.Request()
         request.source                    = MKMapItem(placemark: startingLocation)
         request.destination               = MKMapItem(placemark: destination)
-        request.transportType             = .automobile
+        request.transportType             = .walking
         request.requestsAlternateRoutes   = true
-        
+        print(destnationCoordinate)
         return request
     }
     
@@ -202,7 +233,23 @@ class ThemeVC: UIViewController {
     @IBAction func goButtonTapped(_ sender: UIButton){
         getDirections()
     }
-
+    
+    @IBAction func segMapTapped(_ sender: Any) {
+        
+        let getIndex = secMapControl.selectedSegmentIndex
+        
+        switch (getIndex) {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .satellite
+        default:
+            mapView.mapType = .standard
+        }
+    }
+    
+    
+    
 }
 extension ThemeVC : CLLocationManagerDelegate {
     
@@ -211,7 +258,7 @@ extension ThemeVC : CLLocationManagerDelegate {
         //
         guard let location = locations.last else { return }
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude )
-        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMaters, longitudinalMeters: regionInMaters)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMaters + 50, longitudinalMeters: regionInMaters + 50 )
         mapView.setRegion(region, animated: true)
     }
     
@@ -262,8 +309,43 @@ extension ThemeVC : MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-        renderer.strokeColor = .blue
+        renderer.strokeColor = .green
+        renderer.lineWidth = 1
+//        renderer.strokeColor = .blue
         
         return renderer
+    }
+    
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//
+//        guard let annotation = annotation as? customPin else { return nil }
+//        let identifier = "marker"
+//        var view: MKMarkerAnnotationView
+//
+//        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+//
+//            dequeuedView.annotation = annotation
+//            view = dequeuedView
+//        } else {
+//            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+//            view.canShowCallout = true
+//            view.calloutOffset = CGPoint(x: -5, y: 5)
+//            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//        }
+//
+//        return view
+//
+//    }
+}
+
+class customPin: NSObject,MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    
+    init(pinTitle:String,pinSubtitle:String,location:CLLocationCoordinate2D){
+        self.title = pinTitle
+        self.subtitle = pinSubtitle
+        self.coordinate = location
     }
 }
