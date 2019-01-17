@@ -119,6 +119,35 @@ import UIKit
         graphPath.lineWidth = 2.0
         graphPath.stroke()
     
+        //Draw the circles on top of the graph stroke
+        
+        let linePath = UIBezierPath()
+        
+        //top line
+        linePath.move(to: CGPoint(x: margin,
+                                  y: topBorder))
+        linePath.addLine(to: CGPoint(x: width - margin,
+                                     y: topBorder))
+        
+        //center line
+        
+        linePath.move(to: CGPoint(x: margin,
+                                  y: graphHeight/2 + topBorder))
+        linePath.addLine(to: CGPoint(x: width - margin,
+                                     y: graphHeight/2 + topBorder))
+        
+        //bottom line
+        linePath.move(to: CGPoint(x: margin,
+                                  y: height - bottomBorder))
+        linePath.addLine(to: CGPoint(x: width - margin,
+                                     y: height - bottomBorder))
+        
+        let color = UIColor(white: 1.0, alpha: Constants.colorAlpha)
+        color.setStroke()
+        
+        linePath.lineWidth = 1.0
+        linePath.stroke()
+        
     }
     
     private struct Constants {

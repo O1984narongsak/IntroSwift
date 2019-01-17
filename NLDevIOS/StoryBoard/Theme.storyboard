@@ -26,7 +26,7 @@
                                 </connections>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tl_RS" translatesAutoresizingMaskIntoConstraints="NO" id="jay-f6-uw6">
-                                <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
+                                <rect key="frame" x="168" y="314" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E7-HL-GkJ">
@@ -62,26 +62,91 @@
                                     <action selector="segMapTapped:" destination="vxl-b9-vK9" eventType="valueChanged" id="ThS-lt-GrQ"/>
                                 </connections>
                             </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="RLt-xn-crS">
+                                <rect key="frame" x="20" y="39" width="60" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuG-q3-f5a">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="98J-jF-a74"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="NRg-72-IoW"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="eQ5-KD-nGD"/>
+                                            <constraint firstAttribute="height" constant="30" id="vvH-ks-nIE"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressDropDown:" destination="vxl-b9-vK9" eventType="touchUpInside" id="vai-wb-3vB"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9y-3b-9gg">
+                                        <rect key="frame" x="0.0" y="30" width="60" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="MEv-QF-292"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellDrop" id="GsJ-T9-lsE" customClass="TestDropCell" customModule="NLDevIOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="60" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GsJ-T9-lsE" id="y5o-u3-52f">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyd-5F-LMy">
+                                                            <rect key="frame" x="24.5" y="11.5" width="11" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="qyd-5F-LMy" firstAttribute="centerY" secondItem="y5o-u3-52f" secondAttribute="centerY" id="Lsj-P9-Mgs"/>
+                                                        <constraint firstItem="qyd-5F-LMy" firstAttribute="centerX" secondItem="y5o-u3-52f" secondAttribute="centerX" id="SSB-4I-ZSn"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="lb_DType" destination="qyd-5F-LMy" id="oEV-sl-aRc"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="w9y-3b-9gg" firstAttribute="leading" secondItem="RLt-xn-crS" secondAttribute="leading" id="1LY-J8-Lvg"/>
+                                    <constraint firstItem="w9y-3b-9gg" firstAttribute="width" secondItem="vuG-q3-f5a" secondAttribute="width" id="7mC-B0-MiR"/>
+                                    <constraint firstAttribute="trailing" secondItem="w9y-3b-9gg" secondAttribute="trailing" id="8xE-1s-rk9"/>
+                                    <constraint firstAttribute="bottom" secondItem="w9y-3b-9gg" secondAttribute="bottom" id="RRd-ce-tc8"/>
+                                    <constraint firstItem="w9y-3b-9gg" firstAttribute="top" secondItem="vuG-q3-f5a" secondAttribute="bottom" id="tXg-v0-Cd1"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RU0-SN-ATw" firstAttribute="trailing" secondItem="aMP-Ih-3W4" secondAttribute="trailing" constant="16" id="1Nv-gc-dmb"/>
                             <constraint firstItem="RU0-SN-ATw" firstAttribute="trailing" secondItem="qqZ-sK-fBq" secondAttribute="trailing" constant="40" id="Jap-ye-tZV"/>
+                            <constraint firstItem="RLt-xn-crS" firstAttribute="leading" secondItem="RU0-SN-ATw" secondAttribute="leading" constant="20" id="YVF-Ri-Gyz"/>
                             <constraint firstItem="qqZ-sK-fBq" firstAttribute="top" secondItem="RU0-SN-ATw" secondAttribute="top" constant="20" id="bOV-wN-bEg"/>
                             <constraint firstItem="aMP-Ih-3W4" firstAttribute="centerY" secondItem="cvN-Aq-6Bp" secondAttribute="centerY" id="yD7-9E-sXd"/>
+                            <constraint firstItem="RLt-xn-crS" firstAttribute="top" secondItem="RU0-SN-ATw" secondAttribute="top" constant="19" id="zbp-Tk-iHJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RU0-SN-ATw"/>
                     </view>
                     <connections>
                         <outlet property="addresslbl" destination="9E7-HL-GkJ" id="woN-XA-SI3"/>
+                        <outlet property="btn_DropDown" destination="vuG-q3-f5a" id="deo-iD-zdM"/>
                         <outlet property="mapView" destination="oMD-xM-mlD" id="rxk-3M-mjf"/>
                         <outlet property="secMapControl" destination="qqZ-sK-fBq" id="0dx-zj-IRg"/>
+                        <outlet property="tableView" destination="w9y-3b-9gg" id="TfB-3a-nRt"/>
+                        <outlet property="table_H" destination="MEv-QF-292" id="04X-9I-OXw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pf7-fD-m29" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Dcz-3w-ASc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="138" y="87"/>
+            <point key="canvasLocation" x="136.80000000000001" y="86.806596701649184"/>
         </scene>
     </scenes>
     <resources>

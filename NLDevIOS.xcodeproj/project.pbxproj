@@ -29,6 +29,10 @@
 		302AFF4821EC70080005B85E /* PushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4721EC70080005B85E /* PushButton.swift */; };
 		302AFF4A21EC7DEE0005B85E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4921EC7DEE0005B85E /* CounterView.swift */; };
 		302AFF4C21EC94FB0005B85E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4B21EC94FB0005B85E /* GraphView.swift */; };
+		302AFF4E21EDB4DB0005B85E /* BGCGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF4D21EDB4DB0005B85E /* BGCGView.swift */; };
+		302AFF5121EDDC8A0005B85E /* CustomCtrlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF5021EDDC8A0005B85E /* CustomCtrlVC.swift */; };
+		302AFF5321EDDCEB0005B85E /* CustomCtrl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302AFF5221EDDCEB0005B85E /* CustomCtrl.storyboard */; };
+		302AFF5521EDDDDA0005B85E /* CCBGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AFF5421EDDDDA0005B85E /* CCBGView.swift */; };
 		3030C54321D3748C0054E320 /* CouponCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030C54221D3748C0054E320 /* CouponCollectionCell.swift */; };
 		3030C54521D37D720054E320 /* CouponM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030C54421D37D720054E320 /* CouponM.swift */; };
 		3030C54721D468A70054E320 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030C54621D468A70054E320 /* CommentTableViewCell.swift */; };
@@ -53,6 +57,8 @@
 		3081CCE821D3157900BFC224 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3081CCE721D3157900BFC224 /* Detail.storyboard */; };
 		3081CCEA21D315BC00BFC224 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3081CCE921D315BC00BFC224 /* DetailVC.swift */; };
 		3081CCEC21D31B7C00BFC224 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3081CCEB21D31B7C00BFC224 /* ExtensionUIColor.swift */; };
+		308C1D3421EEC8F000B439FA /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C1D3321EEC8F000B439FA /* Knob.swift */; };
+		308C1D3621EF191D00B439FA /* TestDropCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C1D3521EF191D00B439FA /* TestDropCell.swift */; };
 		30AF261121C10A6300D5CEA2 /* ExtensionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF261021C10A6300D5CEA2 /* ExtensionAlert.swift */; };
 		30C85D4221C76EE4001B090B /* Theme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C85D4121C76EE4001B090B /* Theme.storyboard */; };
 		30C85D4521C76F2B001B090B /* ThemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C85D4421C76F2B001B090B /* ThemeVC.swift */; };
@@ -116,6 +122,10 @@
 		302AFF4721EC70080005B85E /* PushButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushButton.swift; sourceTree = "<group>"; };
 		302AFF4921EC7DEE0005B85E /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		302AFF4B21EC94FB0005B85E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		302AFF4D21EDB4DB0005B85E /* BGCGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCGView.swift; sourceTree = "<group>"; };
+		302AFF5021EDDC8A0005B85E /* CustomCtrlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCtrlVC.swift; sourceTree = "<group>"; };
+		302AFF5221EDDCEB0005B85E /* CustomCtrl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomCtrl.storyboard; sourceTree = "<group>"; };
+		302AFF5421EDDDDA0005B85E /* CCBGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCBGView.swift; sourceTree = "<group>"; };
 		3030C54221D3748C0054E320 /* CouponCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCollectionCell.swift; sourceTree = "<group>"; };
 		3030C54421D37D720054E320 /* CouponM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponM.swift; sourceTree = "<group>"; };
 		3030C54621D468A70054E320 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,6 +150,8 @@
 		3081CCE721D3157900BFC224 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		3081CCE921D315BC00BFC224 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		3081CCEB21D31B7C00BFC224 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		308C1D3321EEC8F000B439FA /* Knob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
+		308C1D3521EF191D00B439FA /* TestDropCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDropCell.swift; sourceTree = "<group>"; };
 		30AF261021C10A6300D5CEA2 /* ExtensionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAlert.swift; sourceTree = "<group>"; };
 		30C85D4121C76EE4001B090B /* Theme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Theme.storyboard; sourceTree = "<group>"; };
 		30C85D4421C76F2B001B090B /* ThemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeVC.swift; sourceTree = "<group>"; };
@@ -240,8 +252,19 @@
 				302AFF4721EC70080005B85E /* PushButton.swift */,
 				302AFF4921EC7DEE0005B85E /* CounterView.swift */,
 				302AFF4B21EC94FB0005B85E /* GraphView.swift */,
+				302AFF4D21EDB4DB0005B85E /* BGCGView.swift */,
 			);
 			path = CGDraw;
+			sourceTree = "<group>";
+		};
+		302AFF4F21EDDC530005B85E /* CustomCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				302AFF5021EDDC8A0005B85E /* CustomCtrlVC.swift */,
+				302AFF5421EDDDDA0005B85E /* CCBGView.swift */,
+				308C1D3321EEC8F000B439FA /* Knob.swift */,
+			);
+			path = CustomCtrl;
 			sourceTree = "<group>";
 		};
 		3030C54821D46CB30054E320 /* ShippingVC */ = {
@@ -339,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				30C85D4421C76F2B001B090B /* ThemeVC.swift */,
+				308C1D3521EF191D00B439FA /* TestDropCell.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -461,6 +485,7 @@
 				304DA2A921D1DD7D00D4F091 /* ScreenRec.storyboard */,
 				302AFF3D21EC288A0005B85E /* Slides.storyboard */,
 				302AFF4221EC6C6D0005B85E /* CGdraw.storyboard */,
+				302AFF5221EDDCEB0005B85E /* CustomCtrl.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -480,6 +505,7 @@
 				3009860621C1F8E4002F2341 /* WebView */,
 				302AFF4421EC6CA40005B85E /* CGDraw */,
 				30FF66FD21DEF50200D9A663 /* BasicCollectionInTB */,
+				302AFF4F21EDDC530005B85E /* CustomCtrl */,
 				302AFF3F21EC28A40005B85E /* Slides */,
 				8789D6B621BA4BF100A01DA2 /* MainMenu */,
 			);
@@ -595,6 +621,7 @@
 				3049D00F21C34A5B0014E705 /* Banner.storyboard in Resources */,
 				8789D6BD21BA4C7200A01DA2 /* MainMenuCell.xib in Resources */,
 				30C85D4721C89DF2001B090B /* Beacon.storyboard in Resources */,
+				302AFF5321EDDCEB0005B85E /* CustomCtrl.storyboard in Resources */,
 				30DB2CF821CCCA0D00AC1850 /* PViewHeader.xib in Resources */,
 				302AFF4321EC6C6D0005B85E /* CGdraw.storyboard in Resources */,
 				8789D6C021BA4FAC00A01DA2 /* Camera.storyboard in Resources */,
@@ -658,6 +685,7 @@
 				3030C54A21D46CFA0054E320 /* ShippingVC.swift in Sources */,
 				306B1BCF21BA67CE00EF10AD /* TextFieldVC.swift in Sources */,
 				300BA37321DE10C400E8F6EB /* SkuCollectionCell.swift in Sources */,
+				308C1D3621EF191D00B439FA /* TestDropCell.swift in Sources */,
 				302AFF4821EC70080005B85E /* PushButton.swift in Sources */,
 				30DB2CF121CCC5FB00AC1850 /* PViewCell.swift in Sources */,
 				300BA36521DC65D900E8F6EB /* PaymentVC.swift in Sources */,
@@ -668,17 +696,21 @@
 				30FF670F21DF580A00D9A663 /* SubProductCell.swift in Sources */,
 				3030C54C21D47D620054E320 /* ShippingTableViewCell.swift in Sources */,
 				30FF670921DEFBE900D9A663 /* ProductCell.swift in Sources */,
+				302AFF5121EDDC8A0005B85E /* CustomCtrlVC.swift in Sources */,
 				3049D01421C3638F0014E705 /* Section.swift in Sources */,
 				8789D6C221BA4FC000A01DA2 /* CameraVC.swift in Sources */,
+				302AFF5521EDDDDA0005B85E /* CCBGView.swift in Sources */,
 				302AFF4C21EC94FB0005B85E /* GraphView.swift in Sources */,
 				30FF670B21DEFF9400D9A663 /* CategoryCell.swift in Sources */,
 				304DA2A721D1DCE900D4F091 /* ScreenRecVC.swift in Sources */,
 				30C85D4521C76F2B001B090B /* ThemeVC.swift in Sources */,
 				3030C54321D3748C0054E320 /* CouponCollectionCell.swift in Sources */,
 				3030C54F21D4869F0054E320 /* DataCenter.swift in Sources */,
+				302AFF4E21EDB4DB0005B85E /* BGCGView.swift in Sources */,
 				30FF671521DF5CE000D9A663 /* SubProductCollectionViewCell.swift in Sources */,
 				3030C54721D468A70054E320 /* CommentTableViewCell.swift in Sources */,
 				3081CCEC21D31B7C00BFC224 /* ExtensionUIColor.swift in Sources */,
+				308C1D3421EEC8F000B439FA /* Knob.swift in Sources */,
 				30C85D4A21C89E45001B090B /* BeaconVC.swift in Sources */,
 				300BA36721DC664400E8F6EB /* PaymentTableViewCell.swift in Sources */,
 				30FF671321DF5C0600D9A663 /* SubProductCollectionView.swift in Sources */,

@@ -16,7 +16,13 @@ class ThemeVC: UIViewController {
     @IBOutlet weak var addresslbl: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var btn_DropDown: UIButton!
+    
     @IBOutlet weak var secMapControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var table_H: NSLayoutConstraint!
+    
+    var testDrop = ["1","2","3"]
     
     let locationManager = CLLocationManager()
     let regionInMaters:Double  = 500
@@ -28,7 +34,7 @@ class ThemeVC: UIViewController {
         super.viewDidLoad()
         checkLocationServices()
         setThemePlate()
-        
+        tableView.isHidden = true
     }
     
     let testla : [Double] = [13.2222,14.9999]
@@ -41,7 +47,44 @@ class ThemeVC: UIViewController {
         mapView.showsTraffic = true
         mapView.showsScale = true
         mapView.mapType = .mutedStandard
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+    
+    //TODO: - DropDown
+    @IBAction func pressDropDown(_ sender: Any) {
+        if tableView.isHidden{
+            animate(toogle: true)
+            btn_DropDown.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        } else {
+            animate(toogle: false)
+            btn_DropDown.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+        }
+        
+    }
+    
+    func animate(toogle:Bool){
+        if toogle {
+            UIView.animate(withDuration: 0.3){
+                self.tableView.isHidden = false
+                if self.tableView.contentSize.height > (self.view.frame.height * 0.8) {
+                    self.table_H.constant = (self.view.frame.height * 0.5)
+                    self.tableView.isScrollEnabled = true
+                }else{
+                    self.table_H.constant = self.tableView.contentSize.height
+                    self.tableView.isScrollEnabled = false
+                }
+//                let table_H = self.tableView.bounds.size.height
+//                self.tableView.scrollRectToVisible(CGRect(x: 0, y: table_H - 1, width: 1, height: 1), animated: toogle)
+            }
+        } else {
+            UIView.animate(withDuration: 0.3){
+                self.tableView.isHidden = true
+            }
+        }
+    }
+    
+    
     
     func setupLocationManager(){
         
@@ -122,7 +165,7 @@ class ThemeVC: UIViewController {
                 return annotation
         }
         
-     
+        
         
         self.mapView.addAnnotations(annotations)
         self.mapView.showAnnotations(annotations, animated: true)
@@ -133,21 +176,21 @@ class ThemeVC: UIViewController {
         
         let reuseIdentifier = "my_pin"
         
-//        let identifier = "marker"
-//        var view: MKMarkerAnnotationView
-//
-//        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
-//            dequeuedView.annotation = annotation
-//            view = dequeuedView
-//        } else {
-//            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            view.canShowCallout = true
-//            view.calloutOffset = CGPoint(x: -5, y: 5)
-//            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-//        }
-//
-//        return view
-//
+        //        let identifier = "marker"
+        //        var view: MKMarkerAnnotationView
+        //
+        //        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
+        //            dequeuedView.annotation = annotation
+        //            view = dequeuedView
+        //        } else {
+        //            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        //            view.canShowCallout = true
+        //            view.calloutOffset = CGPoint(x: -5, y: 5)
+        //            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        //        }
+        //
+        //        return view
+        //
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
         if annotation is MKUserLocation {
             let pin = mapView.view(for: annotation) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
@@ -165,8 +208,8 @@ class ThemeVC: UIViewController {
         } else {
             annotationView?.annotation = annotation
             
-//            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        
+            //            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            
         }
         
         annotationView?.isDraggable = false
@@ -311,31 +354,31 @@ extension ThemeVC : MKMapViewDelegate{
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
         renderer.strokeColor = .green
         renderer.lineWidth = 1
-//        renderer.strokeColor = .blue
+        //        renderer.strokeColor = .blue
         
         return renderer
     }
     
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//
-//        guard let annotation = annotation as? customPin else { return nil }
-//        let identifier = "marker"
-//        var view: MKMarkerAnnotationView
-//
-//        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
-//
-//            dequeuedView.annotation = annotation
-//            view = dequeuedView
-//        } else {
-//            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            view.canShowCallout = true
-//            view.calloutOffset = CGPoint(x: -5, y: 5)
-//            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-//        }
-//
-//        return view
-//
-//    }
+    //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    //
+    //        guard let annotation = annotation as? customPin else { return nil }
+    //        let identifier = "marker"
+    //        var view: MKMarkerAnnotationView
+    //
+    //        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+    //
+    //            dequeuedView.annotation = annotation
+    //            view = dequeuedView
+    //        } else {
+    //            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+    //            view.canShowCallout = true
+    //            view.calloutOffset = CGPoint(x: -5, y: 5)
+    //            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+    //        }
+    //
+    //        return view
+    //
+    //    }
 }
 
 class customPin: NSObject,MKAnnotation {
@@ -347,5 +390,19 @@ class customPin: NSObject,MKAnnotation {
         self.title = pinTitle
         self.subtitle = pinSubtitle
         self.coordinate = location
+    }
+}
+
+//TODO: - tableViewDropDown
+extension ThemeVC: UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testDrop.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellDrop", for: indexPath) as! TestDropCell
+        cell.lb_DType?.text = testDrop[indexPath.row]
+        return cell
     }
 }
