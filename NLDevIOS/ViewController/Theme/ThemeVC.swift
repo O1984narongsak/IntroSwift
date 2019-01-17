@@ -18,23 +18,37 @@ class ThemeVC: UIViewController {
     
     @IBOutlet weak var btn_DropDown: UIButton!
     
+    @IBOutlet weak var btn_Nav: UIButton!
     @IBOutlet weak var secMapControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var table_H: NSLayoutConstraint!
     
     var testDrop = ["1","2","3"]
     
-    let locationManager = CLLocationManager()
+    var secondM = 1
+    var timeM = Timer()
+    
+   
     let regionInMaters:Double  = 500
+    
     var userPinView: MKAnnotationView!
     var previousLocation: CLLocation?
     var directionsArray: [MKDirections] = []
+    var firstDR:Bool = true
+    var locationCoordinate:CLLocationCoordinate2D = CLLocationCoordinate2D()
+    var annotation = MKPointAnnotation()
+    var line:MKPolyline = MKPolyline()
+    var tgNav:Bool = true
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
         setThemePlate()
         tableView.isHidden = true
+ 
+        gestureTouch()
+  
     }
     
     let testla : [Double] = [13.2222,14.9999]
@@ -49,16 +63,18 @@ class ThemeVC: UIViewController {
         mapView.mapType = .mutedStandard
         tableView.delegate = self
         tableView.dataSource = self
+        btn_Nav.layer.cornerRadius = 5
+        btn_DropDown.layer.cornerRadius = 5
     }
     
     //TODO: - DropDown
     @IBAction func pressDropDown(_ sender: Any) {
         if tableView.isHidden{
             animate(toogle: true)
-            btn_DropDown.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+            
         } else {
             animate(toogle: false)
-            btn_DropDown.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+            
         }
         
     }
@@ -67,6 +83,7 @@ class ThemeVC: UIViewController {
         if toogle {
             UIView.animate(withDuration: 0.3){
                 self.tableView.isHidden = false
+                self.btn_DropDown.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
                 if self.tableView.contentSize.height > (self.view.frame.height * 0.8) {
                     self.table_H.constant = (self.view.frame.height * 0.5)
                     self.tableView.isScrollEnabled = true
@@ -80,11 +97,34 @@ class ThemeVC: UIViewController {
         } else {
             UIView.animate(withDuration: 0.3){
                 self.tableView.isHidden = true
+                self.btn_DropDown.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
             }
         }
     }
     
+    //TODO: - LongPress Gesture
     
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer){
+        self.mapView.removeOverlay(line)
+        
+        if gestureReconizer.state != UILongPressGestureRecognizer.State.ended {
+            if(!firstDR){
+//            mapView.removeAnnotations(annotation)
+            }
+            firstDR = false
+            let touchLC = gestureReconizer.location(in: mapView)
+            self.locationCoordinate = mapView.convert(touchLC, toCoordinateFrom: mapView)
+            
+            annotation.coordinate = locationCoordinate
+            mapView.addAnnotation(annotation)
+            print("Tapped : \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
+            return
+        }
+        if gestureReconizer.state != UIGestureRecognizer.State.began {
+            return
+        }
+        
+    }
     
     func setupLocationManager(){
         
@@ -249,7 +289,8 @@ class ThemeVC: UIViewController {
     }
     
     func createDirectionRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request {
-        let destnationCoordinate          = getCenterLocation(for: mapView).coordinate
+        let destnationCoordinate          = annotation.coordinate
+//        let destnationCoordinate          = getCenterLocation(for: mapView).coordinate
         let startingLocation              = MKPlacemark(coordinate: coordinate)
         let destination                   = MKPlacemark(coordinate: destnationCoordinate)
         
@@ -274,7 +315,48 @@ class ThemeVC: UIViewController {
     }
     
     @IBAction func goButtonTapped(_ sender: UIButton){
-        getDirections()
+        if tgNav {
+            toogleNav(tgNav: true)
+           
+        } else {
+            toogleNav(tgNav: false)
+            tgNav = true
+        }
+  
+    }
+    
+    @objc func updateTimeM(){
+        secondM += 1
+        btn_Nav.setTitleColor(#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1), for: .normal)
+        if secondM % 2 == 0 {
+            btn_Nav.setTitleColor(#colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), for: .normal)
+        }
+        if secondM % 3 == 0 {
+//            btn_Nav.setTitleColor(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), for: .normal)
+            getDirections()
+            print(secondM)
+            secondM = 0
+        }
+        
+    }
+    
+    func toogleNav(tgNav:Bool){
+        if tgNav {
+            self.timeM = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ThemeVC.updateTimeM), userInfo: nil, repeats: true)
+            
+            btn_Nav.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+            
+            self.tgNav = false
+        } else {
+            
+            self.timeM.invalidate()
+            
+            btn_Nav.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            btn_Nav.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+            print("Stop Nav")
+            self.tgNav = true
+            
+        }
     }
     
     @IBAction func segMapTapped(_ sender: Any) {
@@ -405,4 +487,22 @@ extension ThemeVC: UITableViewDelegate,UITableViewDataSource {
         cell.lb_DType?.text = testDrop[indexPath.row]
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
+}
+
+extension ThemeVC : UIGestureRecognizerDelegate {
+    func gestureTouch(){
+        
+        self.mapView.delegate = self
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(ThemeVC.handleLongPress(gestureReconizer:)))
+        
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        self.mapView.addGestureRecognizer(lpgr)
+    }
+    
 }

@@ -137,6 +137,7 @@
                     <connections>
                         <outlet property="addresslbl" destination="9E7-HL-GkJ" id="woN-XA-SI3"/>
                         <outlet property="btn_DropDown" destination="vuG-q3-f5a" id="deo-iD-zdM"/>
+                        <outlet property="btn_Nav" destination="aMP-Ih-3W4" id="Ad0-Vg-LTn"/>
                         <outlet property="mapView" destination="oMD-xM-mlD" id="rxk-3M-mjf"/>
                         <outlet property="secMapControl" destination="qqZ-sK-fBq" id="0dx-zj-IRg"/>
                         <outlet property="tableView" destination="w9y-3b-9gg" id="TfB-3a-nRt"/>
