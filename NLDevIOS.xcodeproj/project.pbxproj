@@ -72,6 +72,7 @@
 		30DB2CF421CCC6F300AC1850 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB2CF321CCC6F300AC1850 /* ImageConstants.swift */; };
 		30DB2CF721CCCA0D00AC1850 /* PViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB2CF521CCCA0D00AC1850 /* PViewHeader.swift */; };
 		30DB2CF821CCCA0D00AC1850 /* PViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30DB2CF621CCCA0D00AC1850 /* PViewHeader.xib */; };
+		30E37DBC21F6F4AD00816315 /* ExtensionMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E37DBB21F6F4AD00816315 /* ExtensionMapView.swift */; };
 		30FF66FC21DEF46500D9A663 /* BasicCollectionInTB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FF66FB21DEF46500D9A663 /* BasicCollectionInTB.storyboard */; };
 		30FF670121DEF58200D9A663 /* BasicCollectionInTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF670021DEF58200D9A663 /* BasicCollectionInTBVC.swift */; };
 		30FF670321DEFAE900D9A663 /* HomeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF670221DEFAE900D9A663 /* HomeTable.swift */; };
@@ -165,6 +166,7 @@
 		30DB2CF321CCC6F300AC1850 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		30DB2CF521CCCA0D00AC1850 /* PViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PViewHeader.swift; sourceTree = "<group>"; };
 		30DB2CF621CCCA0D00AC1850 /* PViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PViewHeader.xib; sourceTree = "<group>"; };
+		30E37DBB21F6F4AD00816315 /* ExtensionMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMapView.swift; sourceTree = "<group>"; };
 		30FF66FB21DEF46500D9A663 /* BasicCollectionInTB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BasicCollectionInTB.storyboard; sourceTree = "<group>"; };
 		30FF670021DEF58200D9A663 /* BasicCollectionInTBVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionInTBVC.swift; sourceTree = "<group>"; };
 		30FF670221DEFAE900D9A663 /* HomeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTable.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				3049D01021C35F0C0014E705 /* ExpandableHeaderView.swift */,
 				30C85D4B21C8D461001B090B /* ExtensionUIImage.swift */,
 				3081CCEB21D31B7C00BFC224 /* ExtensionUIColor.swift */,
+				30E37DBB21F6F4AD00816315 /* ExtensionMapView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				302AFF4C21EC94FB0005B85E /* GraphView.swift in Sources */,
 				30FF670B21DEFF9400D9A663 /* CategoryCell.swift in Sources */,
 				304DA2A721D1DCE900D4F091 /* ScreenRecVC.swift in Sources */,
+				30E37DBC21F6F4AD00816315 /* ExtensionMapView.swift in Sources */,
 				30C85D4521C76F2B001B090B /* ThemeVC.swift in Sources */,
 				3030C54321D3748C0054E320 /* CouponCollectionCell.swift in Sources */,
 				3030C54F21D4869F0054E320 /* DataCenter.swift in Sources */,

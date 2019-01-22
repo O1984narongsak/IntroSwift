@@ -28,6 +28,7 @@ class ThemeVC: UIViewController {
     var secondM = 1
     var timeM = Timer()
     
+//    var isLoad: Bool = false
    
     let regionInMaters:Double  = 500
     
@@ -135,11 +136,12 @@ class ThemeVC: UIViewController {
     
     func centerViewOnUserLocation(){
         
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMaters, longitudinalMeters: regionInMaters)
-            mapView.setRegion(region, animated: true)
-        }
-        
+        mapView.zoomMapFitAnnotations()
+//        if let location = locationManager.location?.coordinate {
+//            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMaters, longitudinalMeters: regionInMaters)
+//            mapView.setRegion(region, animated: true)
+//        }
+//        self.isLoad = true;
     }
     
     func checkLocationServices(){
