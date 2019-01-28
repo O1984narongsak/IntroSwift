@@ -42,6 +42,7 @@ class MainMenuVC: UIViewController {
         menuItem.append("CGDraw")
         menuItem.append("BasicCollectionInTB")
         menuItem.append("Custom Control")
+        menuItem.append("Automatic")
     }
     
     func setupTableView() {
@@ -141,6 +142,12 @@ extension MainMenuVC: UITableViewDelegate, UITableViewDataSource {
         case 14:
             let storyboard = UIStoryboard(name: "CustomCtrl", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "CustomCtrlID") as! CustomCtrlVC
+            navigationController?.pushViewController(vc,animated: true)
+            break
+            
+        case 15:
+            let storyboard = UIStoryboard(name: "Automatic", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AutomaticID") as! AutomaticVC
             navigationController?.pushViewController(vc,animated: true)
             break
             

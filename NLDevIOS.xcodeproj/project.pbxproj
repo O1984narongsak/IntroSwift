@@ -50,6 +50,11 @@
 		3049D01621C39A150014E705 /* BannerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049D01521C39A150014E705 /* BannerCollectionCell.swift */; };
 		304DA2A721D1DCE900D4F091 /* ScreenRecVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DA2A621D1DCE900D4F091 /* ScreenRecVC.swift */; };
 		304DA2AA21D1DD7D00D4F091 /* ScreenRec.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304DA2A921D1DD7D00D4F091 /* ScreenRec.storyboard */; };
+		3065F78021F96031006FB05A /* Automatic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065F77F21F96031006FB05A /* Automatic.storyboard */; };
+		3065F78321F9609D006FB05A /* AutomaticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065F78221F9609D006FB05A /* AutomaticVC.swift */; };
+		3065F78521F9656F006FB05A /* AutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065F78421F9656F006FB05A /* AutoTableViewCell.swift */; };
+		3065F78721F96704006FB05A /* AutoTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065F78621F96704006FB05A /* AutoTableVC.swift */; };
+		3065F78921F9AA78006FB05A /* AutoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065F78821F9AA78006FB05A /* AutoModel.swift */; };
 		306B1BCA21BA5EEB00EF10AD /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B1BC921BA5EEB00EF10AD /* ExtensionUIView.swift */; };
 		306B1BCD21BA678200EF10AD /* TextField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306B1BCC21BA678200EF10AD /* TextField.storyboard */; };
 		306B1BCF21BA67CE00EF10AD /* TextFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B1BCE21BA67CE00EF10AD /* TextFieldVC.swift */; };
@@ -144,6 +149,11 @@
 		3049D01521C39A150014E705 /* BannerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionCell.swift; sourceTree = "<group>"; };
 		304DA2A621D1DCE900D4F091 /* ScreenRecVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecVC.swift; sourceTree = "<group>"; };
 		304DA2A921D1DD7D00D4F091 /* ScreenRec.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScreenRec.storyboard; sourceTree = "<group>"; };
+		3065F77F21F96031006FB05A /* Automatic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Automatic.storyboard; sourceTree = "<group>"; };
+		3065F78221F9609D006FB05A /* AutomaticVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticVC.swift; sourceTree = "<group>"; };
+		3065F78421F9656F006FB05A /* AutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTableViewCell.swift; sourceTree = "<group>"; };
+		3065F78621F96704006FB05A /* AutoTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTableVC.swift; sourceTree = "<group>"; };
+		3065F78821F9AA78006FB05A /* AutoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoModel.swift; sourceTree = "<group>"; };
 		306B1BC921BA5EEB00EF10AD /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		306B1BCC21BA678200EF10AD /* TextField.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextField.storyboard; sourceTree = "<group>"; };
 		306B1BCE21BA67CE00EF10AD /* TextFieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldVC.swift; sourceTree = "<group>"; };
@@ -324,6 +334,17 @@
 			path = ScreenRec;
 			sourceTree = "<group>";
 		};
+		3065F78121F96068006FB05A /* Automatic */ = {
+			isa = PBXGroup;
+			children = (
+				3065F78221F9609D006FB05A /* AutomaticVC.swift */,
+				3065F78421F9656F006FB05A /* AutoTableViewCell.swift */,
+				3065F78621F96704006FB05A /* AutoTableVC.swift */,
+				3065F78821F9AA78006FB05A /* AutoModel.swift */,
+			);
+			path = Automatic;
+			sourceTree = "<group>";
+		};
 		306B1BC821BA5ED300EF10AD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				8789D6A221BA4B7700A01DA2 /* Main.storyboard */,
+				3065F77F21F96031006FB05A /* Automatic.storyboard */,
 				3081CCE721D3157900BFC224 /* Detail.storyboard */,
 				3009860921C1F97E002F2341 /* WebView.storyboard */,
 				30FF66FB21DEF46500D9A663 /* BasicCollectionInTB.storyboard */,
@@ -510,6 +532,7 @@
 				30FF66FD21DEF50200D9A663 /* BasicCollectionInTB */,
 				302AFF4F21EDDC530005B85E /* CustomCtrl */,
 				302AFF3F21EC28A40005B85E /* Slides */,
+				3065F78121F96068006FB05A /* Automatic */,
 				8789D6B621BA4BF100A01DA2 /* MainMenu */,
 			);
 			path = ViewController;
@@ -629,6 +652,7 @@
 				302AFF4321EC6C6D0005B85E /* CGdraw.storyboard in Resources */,
 				8789D6C021BA4FAC00A01DA2 /* Camera.storyboard in Resources */,
 				3009861421C23FD2002F2341 /* sharePdf.pdf in Resources */,
+				3065F78021F96031006FB05A /* Automatic.storyboard in Resources */,
 				30C85D4221C76EE4001B090B /* Theme.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,8 +693,10 @@
 				306B1BCA21BA5EEB00EF10AD /* ExtensionUIView.swift in Sources */,
 				30DB2CF421CCC6F300AC1850 /* ImageConstants.swift in Sources */,
 				300BA36921DC668600E8F6EB /* PaymentModel.swift in Sources */,
+				3065F78721F96704006FB05A /* AutoTableVC.swift in Sources */,
 				30DB2CEF21CCC55500AC1850 /* PView.swift in Sources */,
 				30FF670521DEFB2A00D9A663 /* ProductView.swift in Sources */,
+				3065F78521F9656F006FB05A /* AutoTableViewCell.swift in Sources */,
 				30379BA721C0C95100DA5941 /* CollectionVC.swift in Sources */,
 				30FF671121DF585100D9A663 /* SubProdctModel.swift in Sources */,
 				302668C121C8DA3900673F62 /* EstimoteVC.swift in Sources */,
@@ -723,7 +749,9 @@
 				3009860821C1F944002F2341 /* WebViewVC.swift in Sources */,
 				300BA37521DE156B00E8F6EB /* SkuCollectionView.swift in Sources */,
 				3009860C21C1FE85002F2341 /* SubWebViewVC.swift in Sources */,
+				3065F78921F9AA78006FB05A /* AutoModel.swift in Sources */,
 				302AFF4A21EC7DEE0005B85E /* CounterView.swift in Sources */,
+				3065F78321F9609D006FB05A /* AutomaticVC.swift in Sources */,
 				3030C55121D4A2310054E320 /* ShippingModel.swift in Sources */,
 				8789D6B821BA4C0600A01DA2 /* MainMenuVC.swift in Sources */,
 				30FF670321DEFAE900D9A663 /* HomeTable.swift in Sources */,

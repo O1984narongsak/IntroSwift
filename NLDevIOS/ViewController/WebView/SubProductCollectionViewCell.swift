@@ -10,5 +10,7 @@ import UIKit
 
 class SubProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lb_SubColCell: UILabel!
+    @IBOutlet weak var bg_SubColCell: UIView!
+    
     
 }

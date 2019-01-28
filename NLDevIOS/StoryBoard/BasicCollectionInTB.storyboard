@@ -227,11 +227,12 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="69" height="70"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qO-dM-uve">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="70"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="351-Ca-wUX">
                                                                         <rect key="frame" x="13.5" y="24.5" width="42" height="21"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="21" id="crs-cX-Ia7"/>
-                                                                        </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -239,10 +240,15 @@
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
-                                                                <constraint firstItem="351-Ca-wUX" firstAttribute="centerY" secondItem="cMG-4m-ckV" secondAttribute="centerY" id="Taj-LW-sbx"/>
-                                                                <constraint firstItem="351-Ca-wUX" firstAttribute="centerX" secondItem="cMG-4m-ckV" secondAttribute="centerX" id="Yb5-vu-ICg"/>
+                                                                <constraint firstItem="4qO-dM-uve" firstAttribute="top" secondItem="cMG-4m-ckV" secondAttribute="top" id="481-Od-vLr"/>
+                                                                <constraint firstAttribute="bottom" secondItem="4qO-dM-uve" secondAttribute="bottom" id="Dy6-b8-zen"/>
+                                                                <constraint firstItem="351-Ca-wUX" firstAttribute="centerY" secondItem="4qO-dM-uve" secondAttribute="centerY" id="Hzz-78-maJ"/>
+                                                                <constraint firstItem="351-Ca-wUX" firstAttribute="centerX" secondItem="4qO-dM-uve" secondAttribute="centerX" id="OAw-y6-v7N"/>
+                                                                <constraint firstAttribute="trailing" secondItem="4qO-dM-uve" secondAttribute="trailing" id="pxN-Db-XQE"/>
+                                                                <constraint firstItem="4qO-dM-uve" firstAttribute="leading" secondItem="cMG-4m-ckV" secondAttribute="leading" id="qoB-qA-dAN"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="bg_SubColCell" destination="4qO-dM-uve" id="vbk-BF-eha"/>
                                                                 <outlet property="lb_SubColCell" destination="351-Ca-wUX" id="Cg9-3k-WOl"/>
                                                             </connections>
                                                         </collectionViewCell>

@@ -10,6 +10,8 @@ import UIKit
 
 class SubProductCollectionView: UICollectionView {
 
+    private let cellItems = ["All", "Design", "Development", "Social","Geteooeooe","Lolokloklo"]
+    
     override func awakeFromNib() {
         self.delegate = self
         self.dataSource = self
@@ -23,7 +25,7 @@ extension SubProductCollectionView : UICollectionViewDelegate , UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return cellItems.count
     }
     
 //    func collectionView(_ collectionView: UICollectionView, transitionLayoutForOldLayout fromLayout: UICollectionViewLayout, newLayout toLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout {
@@ -32,11 +34,17 @@ extension SubProductCollectionView : UICollectionViewDelegate , UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubProductCollectionViewCell", for: indexPath) as! SubProductCollectionViewCell
-        cell.lb_SubColCell.text = "Hey"
+        cell.lb_SubColCell.adjustsFontSizeToFitWidth    =   true
+        cell.lb_SubColCell.text = cellItems[indexPath.item]
+//        cell.lb_SubColCell.sizeToFit()
+        cell.bg_SubColCell.addSubview(cell.lb_SubColCell)
+
+        cell.lb_SubColCell.adjustsFontSizeToFitWidth    =   true
         cell.contentView.layer.cornerRadius = 0
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
         cell.contentView.layer.masksToBounds = true;
+        
         
         return cell
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeTable: UITableView {
-
+    
     override func awakeFromNib() {
         self.delegate = self
         self.dataSource = self
