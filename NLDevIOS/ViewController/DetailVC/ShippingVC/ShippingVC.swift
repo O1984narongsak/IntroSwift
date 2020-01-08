@@ -88,35 +88,14 @@ extension ShippingVC:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         indexRow = indexPath.row
        
-        
-//      protect form crash
-//        if let data = arrayData {
-//            print(data[0].shipDate)
-//        }
-//        arrayData?.removeAll()
-//        arrayData?.append(ShippingM(shipIMG: UIImage(),
-//                                    shipName: "",
-//                                    shipDate: ""))
-//
-//        if let data = arrayData {
-//            print(data[0].shipDate)
-//        }
-        
-        
-        
         delegate?.shipSelected(data: ShippingM(shipIMG: shipItem[indexPath.row].shipIMG!,
                                                shipName: shipItem[indexPath.row].shipName! ,
                                                shipDate: shipItem[indexPath.row].shipDate!), count: 1)
         dismiss(animated: true, completion: nil)
         print()
-//        self.navigationController?.popViewController(animated: true)
       
          reloadUI()
        
-//        vc.shipName.text! = shipItem[indexPath.row].shipName!
-//        vc.shipImg.image! = shipItem[indexPath.row].shipIMG!
-//        vc.shipDate.text! = shipItem[indexPath.row].shipDate!
-        
         self.navigationController?.popViewController(animated: true)
     }
     
